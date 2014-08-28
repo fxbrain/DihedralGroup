@@ -1,4 +1,4 @@
-# DihedralGroup
+# DihedralGroup.jl
 
 There are only two groups with 10 elements: the integer modulo 10 and the group of symmetries of a 
 regular pentagon, a dihedral group denoted by ![equation](http://www.sciweavers.org/upload/Tex2Img_1409256968/render.png). J.Verhoeff had the inspiration of looking at 
