@@ -10,7 +10,7 @@ sigma(n::Int) = s[n]
 
 function map_indexed{F}(::Type{F}, a::AbstractArray, index::Int=0)
     for i = 1:length(a)
-        a[i] = F(a[i], (i + 1) + index)
+        a[i] = F(a[i], i + index)
     end
 end
 
@@ -43,4 +43,8 @@ println(a)
 
 a = [1:5]
 map_indexed(add_, a, 0)
+println(a)
+
+a = [1:5]
+map_indexed(sub_, a, 0)
 println(a)
