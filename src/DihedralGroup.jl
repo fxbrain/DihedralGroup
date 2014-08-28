@@ -41,12 +41,4 @@ inverse{T <: BitsInteger}(n::T) = inverse(convert(DihedralInteger{T}, n))
                        
 identity{T <: BitsInteger}(n::DihedralInteger{T}) = dhint(0)
 
-#=
-    For the dihedral check digit method we will need a very special permutation, σ, of D₅. 
-    We want σ to have the property that σ(a) * b != σ(b) * a for any distinct elements a 
-    and b of D₅
-=#
-const s = [0, 4, 3, 2, 1, 8, 9, 5, 6, 7];
-sigma(n::Int) = s[n]
-
 end
