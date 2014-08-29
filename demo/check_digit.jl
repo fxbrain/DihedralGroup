@@ -36,11 +36,12 @@ pow_(a, b) = a^b
 add_(a, b) = a + b
 sub_(a, b) = a - b
 
-#multiply{F}(::Type{F}, a, b) = F(a, b)
-#power{F}(::Type{F}, a, b) = F(a, b)
-#add{F}(::Type{F}, a, b) = F(a, b)
-#sub{F}(::Type{F}, a, b) = F(a, b)
+multiply{F}(::Type{F}, a, b) = F(a, b)
+power{F}(::Type{F}, a, b) = F(a, b)
+add{F}(::Type{F}, a, b) = F(a, b)
+sub{F}(::Type{F}, a, b) = F(a, b)
 
+#=
 a = [1:5]
 map_indexed(mult_, a, 1)
 println(a)
@@ -56,6 +57,7 @@ println(a)
 a = [1:5]
 map_indexed(sub_, a, 0)
 println(a)
+=#
 
 type plus_2 <: UnaryFunctor end
 
