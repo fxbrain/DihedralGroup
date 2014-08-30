@@ -14,7 +14,13 @@ function map_indexed{F}(::Type{F}, a::AbstractArray, index::Int=0)
     end
 end
 
-function apply_n{A, B}(number::A, ::Type{B}, times::Int)
+function map_indexed(F::Function, G::Function, a::AbstractArray)
+    for i = 1:length(a)
+        a[i] = F(a[i], G, length(a) - i)
+    end
+end
+
+function apply_n{A}(number::A, B::Function, times::Int)
     for i = 1:times
         number = B(number)
     end
@@ -67,3 +73,9 @@ accumulate{F}(::Type{F}, a) = F(a)
 
 a= [1:5]
 map(x -> accumulate(plus_2, x), a)
+
+a = [1:5]
+map(x -> apply_n(x, plus_2, 2), a)
+
+a = reverse(digits(12345));
+map_indexed(apply_n, sigma, a)
